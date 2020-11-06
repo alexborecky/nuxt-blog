@@ -78,9 +78,9 @@ export default {
     ]
   },
 
-  router: {
-    base: '/blog/'
-  },
+  // router: {
+  //   base: '/blog/'
+  // },
   /*
   ** Build configuration
   */
