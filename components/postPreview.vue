@@ -44,6 +44,9 @@ a {
     text-decoration: none;
     width: 48%;
     margin: 16px 0;
+    @media only screen and (max-width: 450px) {
+        width: 100%;
+    }
     .post-preview {
         width: 100%;
         .post-preview-thumbnail {

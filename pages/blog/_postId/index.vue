@@ -39,6 +39,9 @@
             height: 600px;
             background-size: cover;
             background-position: center;
+            @media only screen and (max-width: 450px) {
+                height: 240px;
+            }
         }
         .content {
             p {
