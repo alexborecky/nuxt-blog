@@ -50,7 +50,6 @@ export default {
         process.env.NODE_ENV ==  "production" 
         ? 'Py7qqe3x1iRZsTQQg3HriQtt'
         : 'tdCqo7r0m8uk2mH5ou1Nbwtt',
-        cacheProvider: "memory"
       }
     ]
   ],
