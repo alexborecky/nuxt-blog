@@ -1,5 +1,5 @@
 <template>
-  <div class="page" v-editable="blok">
+  <div class="page">
     <div class="container flex">
       <postPreview 
         v-for="post in posts"
