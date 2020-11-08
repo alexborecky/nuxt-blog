@@ -1,5 +1,5 @@
 <template>
-    <div class="post" v-editable="block">
+    <div class="post" v-editable="blok">
         <div class="container">
             <div class="post-thumbnail" :style="{backgroundImage: 'url('+ image +')'}"></div>
             <div class="content">
@@ -19,7 +19,7 @@
             })
             .then(res => {
                 return {
-                    block: res.data.story.content,
+                    blok: res.data.story.content,
                     image: res.data.story.content.thumbnail,
                     title: res.data.story.content.title,
                     content: res.data.story.content.content,

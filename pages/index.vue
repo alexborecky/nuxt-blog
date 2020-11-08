@@ -1,14 +1,7 @@
 <template>
   <div class="page">
     <div class="container flex">
-      <postPreview 
-        v-for="post in posts"
-        :key="post.id"
-        :title="post.title"
-        :previewText="post.previewText"
-        :thumbnail="post.thumbnail"
-        :id="post.id"
-      />
+      This is a home page
     </div>
   </div>
 </template>

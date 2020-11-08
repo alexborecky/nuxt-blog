@@ -1,7 +1,8 @@
 <template>
     <div class="page header">
         <div class="container flex">
-            <nuxt-link to="/blog">Home</nuxt-link>
+            <nuxt-link to="/">Home</nuxt-link>
+            <nuxt-link to="/blog">Blog</nuxt-link>
             <nuxt-link to="/about">About us</nuxt-link>
         </div>
     </div>
