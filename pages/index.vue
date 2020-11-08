@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page" v-editable="blok">
     <div class="container flex">
       This is a home page
     </div>
@@ -27,6 +27,17 @@ export default {
       }
     });
   },
+  mounted () {
+            this.$storybridge.on(['input', 'published', 'change'], (event) => {
+                if (event.action == 'input') {
+                if (event.story.id === this.story.id) {
+                    this.story.content = event.story.content
+                }
+                } else {
+                window.location.reload()
+                }
+            })
+        },
     // data () {
     //   return {
     //     posts: [

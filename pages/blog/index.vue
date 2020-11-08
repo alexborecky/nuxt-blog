@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page" v-editable="blok">
     <div class="container flex">
       <postPreview 
         v-for="post in posts"
@@ -19,7 +19,7 @@ export default {
   asyncData(context) {
     return context.app.$storyapi
     .get("cdn/stories", {
-      version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
+      version: context.isDev ? 'draft' : 'published',
       starts_with: 'blog/'
     })
     .then(res => {
@@ -36,6 +36,17 @@ export default {
       }
     });
   },
+  mounted () {
+            this.$storybridge.on(['input', 'published', 'change'], (event) => {
+                if (event.action == 'input') {
+                if (event.story.id === this.story.id) {
+                    this.story.content = event.story.content
+                }
+                } else {
+                window.location.reload()
+                }
+            })
+        },
     // data () {
     //   return {
     //     posts: [
