@@ -15,7 +15,6 @@ export default {
       version: context.isDev ? 'draft' : 'published',
     })
     .then(res => {
-      console.log(res);
       return {
         posts: res.data.stories.map(bp => {
           return {
