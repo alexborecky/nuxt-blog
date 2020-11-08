@@ -17,7 +17,8 @@
             .get("cdn/stories/blog/" + context.params.postId, {
                 version: process.env.NODE_ENV == 'production' ? 'published' : 'draft'
             })
-            .then(res => {
+            .then(res => { 
+                console.log(res.data)
                 return {
                     blok: res.data.story.content,
                     image: res.data.story.content.thumbnail,
@@ -25,6 +26,17 @@
                     content: res.data.story.content.content,
                 }
             });
+        },
+        mounted () {
+            this.$storybridge.on(['input', 'published', 'change'], (event) => {
+                if (event.action == 'input') {
+                if (event.story.id === this.story.id) {
+                    this.story.content = event.story.content
+                }
+                } else {
+                window.location.reload()
+                }
+            })
         },
     }
 </script>
